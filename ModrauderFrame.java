@@ -1,14 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
@@ -79,14 +83,14 @@ public class ModrauderFrame extends JFrame {
         area.setFont(barFont);
         area.setEnabled(false);
         area.setBackground(new Color(0x181a1f));
-        area.setBounds(0, 40, 484, 110);
+        area.setBounds(0, 45, 500, 110);
         area.setText(String.join("\n", log));
         this.add(area);
 
         JProgressBar bar = new JProgressBar();
         bar.setFont(barFont);
         bar.setValue(0);
-        bar.setBounds(0, 150, 484, 20);
+        bar.setBounds(0, 160, 500, 20);
         bar.setForeground(new Color(0x181a1f));
         bar.setStringPainted(true);
         bar.setVisible(false);
@@ -96,7 +100,7 @@ public class ModrauderFrame extends JFrame {
         installBT.setFocusable(false);
         installBT.setBackground(Color.GRAY);
         installBT.setForeground(new Color(0xf5f5f5));
-        installBT.setBounds(410, 170, 75, 40);
+        installBT.setBounds(420, 180, 75, 40);
         installBT.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event){
@@ -171,7 +175,7 @@ public class ModrauderFrame extends JFrame {
         JLabel myName = new JLabel("Mod Installer Made By: @The Supreme Being");
         myName.setFont(nameFont);
         myName.setForeground(Color.GREEN);
-        myName.setBounds(5, 170, 400, 40);
+        myName.setBounds(5, 180, 500, 40);
         this.add(myName);
 
         this.setLayout(null);
@@ -185,13 +189,25 @@ public class ModrauderFrame extends JFrame {
     public static boolean installFabric(String gameVersion, String minecraftFolder) {
         String downloadLink = "https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.11.2/fabric-installer-0.11.2.jar";
         try {
-            HttpRequest fileGetRequest = HttpRequest.newBuilder()
-                .uri(new URI(downloadLink))
-                .GET()
-                .build();
+            
+            URL downloadUrl = new URL(downloadLink);
+            HttpURLConnection connection = (HttpURLConnection) downloadUrl.openConnection();
 
-            HttpClient client = HttpClient.newHttpClient();
-            client.send(fileGetRequest, BodyHandlers.ofFile(Path.of("fabric_latest.jar")));
+            connection.setRequestMethod("GET");
+
+            InputStream inputStream = connection.getInputStream();
+            
+            FileOutputStream outputStream = new FileOutputStream("fabric_latest.jar");
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+
+            outputStream.close();
+            inputStream.close();
+            connection.disconnect();
 
             String[] commandLine = new String[8];
             commandLine[0] = "java";
@@ -211,7 +227,7 @@ public class ModrauderFrame extends JFrame {
 
             return true;
         
-        } catch (URISyntaxException | IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             System.out.println(e);
             return false;
         }
@@ -258,51 +274,76 @@ public class ModrauderFrame extends JFrame {
     }    
 
     public static boolean downloadModFiles(String modId, String gameVersion, int modApi, File modFolder) {
-        HttpRequest getRequest;
-        HttpResponse<String> getResponse = null;
-        try {
-            getRequest = HttpRequest.newBuilder()
-                .uri(new URI(String.format("https://api.curseforge.com/v1/mods/%s/files?gameVersion=%s&modLoaderType=%s&index=0&pageSize=1", modId, gameVersion, modApi)))
-                .header("Accept", "application/json")
-                .header("x-api-key", "$2a$10$cxwv/oii490ru.VvB5Tp2OEU2WOO0li0cEVdhEOpIwfAI950iWg/q")
-                .GET()
-                .build();
+            URL downloadUrl;
+            try {
+                downloadUrl = new URL(String.format("https://api.curseforge.com/v1/mods/%s/files?gameVersion=%s&modLoaderType=%s&index=0&pageSize=1", modId, gameVersion, modApi));
             
-            HttpClient client = HttpClient.newHttpClient();
-        
-            getResponse = client.send(getRequest, BodyHandlers.ofString());
+                HttpURLConnection connection = (HttpURLConnection) downloadUrl.openConnection();
 
-            String downloadLink = JsonParser.parseString(getResponse.body().toString()).getAsJsonObject().get("data")
-                                    .getAsJsonArray().get(0)
-                                    .getAsJsonObject().get("downloadUrl").getAsString();
-            
-            String fileName = JsonParser.parseString(getResponse.body().toString()).getAsJsonObject().get("data")
-                                .getAsJsonArray().get(0)
-                                .getAsJsonObject().get("fileName").getAsString();
+                connection.setRequestMethod("GET");
+                connection.setRequestProperty("Accept", "application/json");
+                connection.setRequestProperty("x-api-key", "$2a$10$cxwv/oii490ru.VvB5Tp2OEU2WOO0li0cEVdhEOpIwfAI950iWg/q");
 
-            HttpRequest fileGetRequest = HttpRequest.newBuilder()
-                .uri(new URI(downloadLink))
-                .GET()
-                .build();
-            
-            HttpResponse<String> fileGetResponse = client.send(fileGetRequest, BodyHandlers.ofString());
-            
-            URI newFileLink = new URI(fileGetResponse.headers().allValues("location").get(0));
-            HttpRequest newFileRequest = HttpRequest.newBuilder()
-                .uri(newFileLink)
-                .GET()
-                .build();
-            
-            client.send(newFileRequest, BodyHandlers.ofFile(Path.of(fileName)));
+                InputStream inputStream = connection.getInputStream();
+                
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                StringBuilder response = new StringBuilder();
 
-            File mod = new File(fileName);
-            mod.renameTo(new File(modFolder+"\\"+mod.getName()));
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+                reader.close();
+
+                String downloadLink = JsonParser.parseString(response.toString()).getAsJsonObject().get("data").getAsJsonArray().get(0).getAsJsonObject().get("downloadUrl").getAsString();
+                String filename = JsonParser.parseString(response.toString()).getAsJsonObject().get("data").getAsJsonArray().get(0).getAsJsonObject().get("fileName").getAsString();
+
+                inputStream.close();
+            
+            
+                // // pt2
+                URL fileLink = new URL(downloadLink);
+                connection = (HttpURLConnection) fileLink.openConnection();
+                connection.setRequestMethod("GET");
+
+                FileOutputStream outputStream = new FileOutputStream(modFolder.getAbsolutePath()+"\\"+filename);
+                byte[] buffer = new byte[4096];
+                int bytesRead;
+
+                while ((bytesRead = connection.getInputStream().read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                outputStream.close();
+                connection.disconnect();
+
+            // // pt3
+            // URL modFile = new URL(connection.getHeaderField("location"));
+            // connection = (HttpURLConnection) modFile.openConnection();
+            // connection.setRequestMethod("GET");
+
+            // InputStream inputStream1 = connection.getInputStream();
+
+            // FileOutputStream outputStream1 = new FileOutputStream(modFolder.getAbsolutePath()+"\\"+fileName);
+            // System.out.println(modFolder.getAbsolutePath()+"\\"+fileName);
+            // byte[] buffer = new byte[4096];
+            // int bytesRead;
+
+            // while ((bytesRead = inputStream.read(buffer)) != -1) {
+            //     outputStream1.write(buffer, 0, bytesRead);
+            // }
+
+            // outputStream1.close();
+            // inputStream1.close();
+            // connection.disconnect();
 
             return true;
 
-        } catch (URISyntaxException | IOException | InterruptedException  error) {
-           return false;
+        } catch (IOException error) {
+            System.err.println(error);
+            return false;
         }
+        
     }
 
 }
