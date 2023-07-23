@@ -7,13 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 import org.ini4j.*;
@@ -316,26 +311,6 @@ public class ModrauderFrame extends JFrame {
 
                 outputStream.close();
                 connection.disconnect();
-
-            // // pt3
-            // URL modFile = new URL(connection.getHeaderField("location"));
-            // connection = (HttpURLConnection) modFile.openConnection();
-            // connection.setRequestMethod("GET");
-
-            // InputStream inputStream1 = connection.getInputStream();
-
-            // FileOutputStream outputStream1 = new FileOutputStream(modFolder.getAbsolutePath()+"\\"+fileName);
-            // System.out.println(modFolder.getAbsolutePath()+"\\"+fileName);
-            // byte[] buffer = new byte[4096];
-            // int bytesRead;
-
-            // while ((bytesRead = inputStream.read(buffer)) != -1) {
-            //     outputStream1.write(buffer, 0, bytesRead);
-            // }
-
-            // outputStream1.close();
-            // inputStream1.close();
-            // connection.disconnect();
 
             return true;
 
