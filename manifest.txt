@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Built-By: unbandit
-Class-Path: lib\gson-2.10.1.jar lib\ini4j-0.5.5-SNAPSHOT.jar Config.mc
