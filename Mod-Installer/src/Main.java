@@ -1,6 +1,11 @@
+import me.unbandit.Tools.*;
+
 public class Main {
     public static void main(String[] args) {
-        ModrauderFrame window = new ModrauderFrame();
+
+        GUI window = new GUI();
         window.Render();
+
     }
+
 }

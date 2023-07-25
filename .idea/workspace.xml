@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Modrauder-Installer:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3df71e4c-94a3-4f13-af7b-7c4edabff2b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ConfigReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ModLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Modrauder_Installer_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.mc" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/Config.mc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modrauder-Installer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModrauderFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ModrauderFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ModrauderFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gson-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ini4j-0.5.5-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Modrauder_Installer_jar/Modrauder-Installer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/artifacts/Modrauder_Installer_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Config.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Modrauder-Installer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/ModrauderFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/ModrauderFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/README.MD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/lib/gson-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/lib/ini4j-0.5.5-SNAPSHOT.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SzDYq2ZJKhvkMr511ZfZrBnujW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Danie/Downloads/ini4j-0.5.5-SNAPSHOT-all/ini4j-0.5.5-SNAPSHOT/ini4j-0.5.5-SNAPSHOT.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\Java\Modrauder-Installer\Mod-Installer\src" />
+      <recent name="C:\Dev\Java\Modrauder-Installer\Mod-Installer" />
+      <recent name="C:\Dev\Java\Modrauder-Installer\Mod-Installer\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ModInstaller" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Mod-Installer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3df71e4c-94a3-4f13-af7b-7c4edabff2b7" name="Changes" comment="" />
+      <created>1690140567351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690140567351</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.mc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
