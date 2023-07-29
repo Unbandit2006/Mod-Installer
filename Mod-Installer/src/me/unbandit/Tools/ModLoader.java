@@ -16,7 +16,7 @@ public class ModLoader {
     public ModLoader(String whatKind, String gameVersion) {
         this.modLoader = whatKind;
         this.gameVersion = gameVersion;
-        this.minecraftFolder = new File(System.getenv("APPDATA") + "\\.minecraft\\mods");
+        this.minecraftFolder = new File(System.getenv("APPDATA") + "\\.minecraft");
     }
 
     public boolean Install() {

@@ -27,7 +27,9 @@ Valid values = "Modrinth" or "Curseforge"
 <b>ClearPreviousMods</b></br>
 Weather or not to delete all previous mods in the mods folder
 
-### Mods Section
+### Mods Sections
+
+#### CurseforgeMods
 ```ini
 Wormhole = 396803
 Botany Trees = 411357
@@ -37,6 +39,20 @@ Mouse Tweaks = 60089
 Fabric API = 306612
 ```
 Anything = ProjectID</br>
-So its very simple what I mean. On the left side of the equals sign you must 
+So its very simple what I mean. On the left side of the equals sign you must
+provide the Mod name, preferably but the program will run if it's not. On the
+right side of the ProjectID.</br>
+
+#### ModrinthMods
+```ini
+Fabric API = P7dR8mSH
+Dynamic Lights = yBW8D80W
+Craftify = nrJ2NpD0
+Create = Xbc0uyRg
+Trains = XKPAmI6u
+Ad Astra = 3ufwT9JF
+```
+Anything = ProjectID</br>
+So its very simple what I mean. On the left side of the equals sign you must
 provide the Mod name, preferably but the program will run if it's not. On the
 right/left(Modrinth) side of the ProjectID.</br>

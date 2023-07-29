@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Mod-Installer.jar">
+    <output-path>$PROJECT_DIR$/bin/jars/</output-path>
+    <root id="archive" name="Mod-Installer.jar">
+      <element id="module-output" name="Mod-Installer" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/ini4j-0.5.5-SNAPSHOT-all/ini4j-0.5.5-SNAPSHOT/ini4j-0.5.5-SNAPSHOT.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mod-Installer/src/Main.java" />
+    </root>
+  </artifact>
+</component>

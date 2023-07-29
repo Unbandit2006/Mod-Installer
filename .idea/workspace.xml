@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Modrauder-Installer:jar" />
+      <artifact name="Mod-Installer.jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,44 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3df71e4c-94a3-4f13-af7b-7c4edabff2b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ModLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Modrauder_Installer_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config.mc" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/Config.mc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modrauder-Installer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModrauderFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ModrauderFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ModrauderFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/gson-2.10.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ini4j-0.5.5-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Modrauder_Installer_jar/Modrauder-Installer.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/artifacts/Modrauder_Installer_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Config.mc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/Modrauder-Installer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/ModrauderFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/ModrauderFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/README.MD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/lib/gson-2.10.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Modrauder-Installer/lib/ini4j-0.5.5-SNAPSHOT.jar" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Mod_Installer_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ModInstaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/jars/Mod-Installer.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/ModInstaller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ini4j_0_5_5_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ini4j_0_5_5_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mod-Installer/src/Config.mc" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/Config.mc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ConfigReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ModLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mod-Installer/src/me/unbandit/Tools/ModLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/Mod-Installer/Config.mc" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/Config.mc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/Mod-Installer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/ConfigReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/ConfigReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/ModLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/Mod-Installer/me/unbandit/Tools/ModLoader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,10 +66,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Danie/Downloads/ini4j-0.5.5-SNAPSHOT-all/ini4j-0.5.5-SNAPSHOT/ini4j-0.5.5-SNAPSHOT.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dev/Java/Modrauder-Installer/Mod-Installer/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
