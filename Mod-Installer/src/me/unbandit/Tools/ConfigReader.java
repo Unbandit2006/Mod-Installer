@@ -2,10 +2,7 @@ package me.unbandit.Tools;
 
 import org.ini4j.Ini;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ConfigReader {
@@ -19,6 +16,7 @@ public class ConfigReader {
 
     public ArrayList<String> modNamesModrinth = new ArrayList<>();
     public ArrayList<String> modIdsModrinth = new ArrayList<>();
+    public ArrayList<String> ConfigFilenames = new ArrayList<>();
 
     public Ini configReader;
 
@@ -50,9 +48,12 @@ public class ConfigReader {
                 modIdsModrinth.add(configReader.get("ModrinthMods").get(modName));
             }
 
+            ConfigFilenames.addAll(configReader.get("ConfigFilenames").keySet());
+
             return true;
 
         } catch (IOException error) {
+            System.out.println(error);
             return false;
         }
     }

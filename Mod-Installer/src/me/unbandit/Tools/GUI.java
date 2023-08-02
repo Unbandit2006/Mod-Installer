@@ -4,10 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GUI extends JFrame{
 
@@ -31,7 +36,8 @@ public class GUI extends JFrame{
     public void Render() {
 
         if (configReader.read() != true) {
-            JOptionPane.showMessageDialog(null, "Unable to read "+configReader.file, "Couldn't Open Config File", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Unable to read "+configReader.file, "Unable To Read Config file", JOptionPane.YES_NO_OPTION);
+            System.exit(-1);
         }
 
         Font titleFont = new Font("Consolas", Font.PLAIN, 30);
@@ -66,7 +72,7 @@ public class GUI extends JFrame{
                             log.setText(String.join("", logText));
                         }
                         modInstaller.ClearAndOrMakeMods(configReader.clearMods, logText, log);
-                        InstallAllMods(log, logText, configReader);
+                        InstallAllModsAndConfig(log, logText, configReader);
 
                         installBT.setEnabled(false);
                         installBT.setText("Done ;)");
@@ -94,7 +100,7 @@ public class GUI extends JFrame{
                             log.setText(String.join("", logText));
                         }
                         modInstaller.ClearAndOrMakeMods(configReader.clearMods, logText, log);
-                        InstallAllMods(log, logText, configReader);
+                        InstallAllModsAndConfig(log, logText, configReader);
                     }
                 }
         );
@@ -212,7 +218,49 @@ public class GUI extends JFrame{
         this.setVisible(true);
     }
 
-    private void InstallAllMods(JTextArea log, ArrayList<String> logText, ConfigReader configReader) {
+    private void InstallAllModsAndConfig(JTextArea log, ArrayList<String> logText, ConfigReader configReader) {
+
+        try {
+            for (String fileName : configReader.ConfigFilenames) {
+                ArrayList<String> folderPath = new ArrayList<>();
+                String realFileName = fileName;
+
+                if (fileName.contains("\\")) {
+                    String[] fileNameArray = fileName.split("\\\\");
+
+                    for (String element : fileNameArray) {
+                        if (!(element.endsWith(".json") || element.endsWith(".toml") || element.endsWith(".json5") || element.endsWith(".properties") || element.endsWith(".hjson") || element.endsWith(".ini"))) {
+                            folderPath.add(element);
+                        } else {
+                            realFileName = element;
+                        }
+                    }
+                }
+
+                StringBuilder realFolderPath = new StringBuilder();
+                realFolderPath.append("\\");
+                if (!folderPath.isEmpty()){
+
+                    for (String folder : folderPath) {
+                        realFolderPath.append(folder).append("\\");
+                    }
+
+                }
+                if (!new File(System.getenv("APPDATA") + "\\.minecraft\\config"+realFolderPath.toString()).exists()) {
+                    new File(System.getenv("APPDATA") + "\\.minecraft\\config"+realFolderPath.toString()).mkdir();
+                }
+
+                System.out.printf("FILENAME: %s | OUTPUT DIR: %s\n", realFileName, realFolderPath.toString()+"\\"+realFileName);
+                Files.copy(new File(this.getClass().getResource("/"+realFileName).toURI()).toPath(), new File(System.getenv("APPDATA") + "\\.minecraft\\config" + realFolderPath.toString() + realFileName).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                logText.add(new File(this.getClass().getResource("/"+realFileName).toURI()).toPath().toString()+"\n");
+                log.setText(String.join("", logText));
+            }
+        } catch (URISyntaxException | IOException error) {
+            logText.add("Couldn't Install Config files\n");
+            log.setText(String.join("", logText));
+            System.out.println("Error");
+        }
+
         for (String modId : configReader.modIdsCurseforge) {
             for (String modName : configReader.modNamesCurseforge) {
                 if (modInstaller.InstallCurseforgeMod(modId, configReader.gameVersion, configReader.modApi) == true) {
