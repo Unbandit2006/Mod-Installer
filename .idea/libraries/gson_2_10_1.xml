@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="gson-2.10.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/gson-2.10.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/ini4j-0.5.5-SNAPSHOT-all/ini4j-0.5.5-SNAPSHOT/ini4j-0.5.5-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
